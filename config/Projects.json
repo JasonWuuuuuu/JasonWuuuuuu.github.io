@@ -1,14 +1,14 @@
 [
   {
     "status": "Doing",
-    "dateRange": "2023.12 - ?",
-    "imageSrc": "images/examplepro.png",
-    "text": "Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project."
+    "dateRange": "2025.1 - ?",
+    "imageSrc": "images/cluster.png",
+    "text": "This study investigates the impact of lane-changing vehicles on following traffic flow and proposes a predictive model for vehicle platoon interactions. Lane-changing maneuvers can trigger chain reactions that affect traffic efficiency and safety. To enhance autonomous vehicles' decision-making capabilities, we develop a method to predict interaction coefficients between vehicles by analyzing microscopic behavioral patterns. Key contributions include:1)Identifying interpretable interaction patterns through hierarchical clustering of interaction impact strength (IIS),2)Observing transitional features in interaction patterns during lane changes,3)Demonstrating that incorporating prior knowledge of interaction patterns significantly improves prediction accuracy across various traffic scenarios The findings provide theoretical support for multi-vehicle cooperative driving by revealing the dependency relationships between leading and following vehicles during lane changes."
   },
   {
     "status": "Doing",
-    "dateRange": "2023.12 - ?",
-    "imageSrc": "images/examplepro.png",
-    "text": "Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project. Some ongoing projects. Introduction to the project."
+    "dateRange": "2025.1 - ?",
+    "imageSrc": "images/glost.png",
+    "text": "This study is mainly aimed at solving the ghost probe problem in intelligent driving. This paper proposes a phased processing framework method to improve detection accuracy, proposes an attitude estimation matrix for target tracking, and presents a probe data augmentation method and motion trend visualization.At present, we are still in the stage of processing the dataset. In order to make the experiment more in-depth, we have decided to use the JAAD dataset to classify and analyze different labels for predicting pedestrian crossing intentions."
   }
 ]

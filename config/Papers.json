@@ -1,15 +1,23 @@
 [
   {
-    "title": "Mesoscopic simulation on curing deformation and residual stresses of 3D braided composites",
-    "author": "Yutong Fu, Xuhao Gao, Xuefeng Yao",
-    "imageSrc": "images/examplepaper.png",
-    "conference": "Composite Structures"
+    "title": "Crack Detection on Road Surfaces Based on Improved YOLOv8",
+    "author": "Haiyang Wu; Lingyun Kong; Denghui Liu",
+    "imageSrc": "images/YOLOv8-VAN.jpg",
+    "conference": "IEEE Access",
+    "pdfLink": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10802889"
   },
   {
-    "title": "Mesoscopic simulation on curing deformation and residual stresses of 3D braided composites",
-    "author": "Yutong Fu, Xuhao Gao, Xuefeng Yao",
-    "imageSrc": "images/examplepaper.png",
-    "conference": "Composite Structures",
-    "pdfLink": "paper/test_page.pdf"
+    "title": "Open-set image segmentation based on an improved Segment Anything model",
+    "author": "Haiyang Wu; Lingyun Kong; Zhipeng Xue; Denghui Liu; Songyang Li; Qi Zhang",
+    "imageSrc": "images/openset.png",
+    "conference": "2024 6th International Conference on Robotics, Intelligent Control and Artificial Intelligence (RICAI)",
+    "pdfLink": "10.1109/RICAI64321.2024.10911698"
+  },
+  {
+    "title": "Remote Sensing Image Super-Resolution Reconstruction by Fusing Multi-Scale Receptive Fields and Hybrid Transformer",
+    "author": "Liu, D.; Zhong, L.; Wu, H.; Li, S.; Li, Y.",
+    "imageSrc": "images/trans.png",
+    "conference": "Scientific reports",
+    "pdfLink": "10.1038/s41598-025-86446-5"
   }
 ]
