@@ -1,0 +1,42 @@
+[module]
+
+  [module.hugoVersion]
+    extended = true
+    min = "0.92.0"
+
+
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+
+  [[module.mounts]]
+    source = "layouts" 
+    target = "layouts"
+
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  [[module.mounts]]
+    source = "node_modules/bootstrap/scss"
+    target = "assets/scss/bootstrap"
+
+  [[module.mounts]]
+    source = "node_modules/bootstrap/dist/js"
+    target = "assets/js/bootstrap"
+
+  [[module.mounts]]
+    source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    target = "assets/js/vendor/bootstrap.bundle.min.js"
+
+  [[module.mounts]]
+    source = "node_modules/bootstrap-print-css/css/bootstrap-print.css"
+    target = "assets/css/bootstrap-print.css"

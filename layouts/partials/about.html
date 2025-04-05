@@ -1,0 +1,76 @@
+{{- $contextType := printf "%T" . -}}
+{{- $isShortcode := (eq $contextType "*hugolib.ShortcodeWithPage") -}}
+
+{{/* ---------------------------------------------------------------------------
+     TITLE AND CONTENT
+     --------------------------------------------------------------------------- */}}
+{{- $title := "" -}}
+{{- $content := "" -}}
+
+{{- if $isShortcode }}
+  {{- $title = .Get "title" | default ( i18n "about_title" ) -}}
+  {{- $content = .Get "content" | default ( i18n "about_content" ) | safeHTML -}}
+{{ else }}
+  {{- $title = i18n "about_title" -}}
+  {{- $content = i18n "about_content" | safeHTML -}}
+{{ end }}
+
+{{/* ---------------------------------------------------------------------------
+     IMAGES
+     --------------------------------------------------------------------------- */}}
+{{- $imgSrc := "" -}}
+{{- $imgWidth := 0 -}}
+{{- $imgHeight := 0 -}}
+{{- $imgScale := 0.5 -}}
+
+{{- if $isShortcode }}
+  {{- $imgSrc = .Get "imgSrc" | default .Site.Data.homepage.about.image.src -}}
+  {{- $imgWidth = .Get "imgWidth" | default .Site.Data.homepage.about.image.width -}}
+  {{- $imgHeight = .Get "imgHeight" | default .Site.Data.homepage.about.image.height -}}
+  {{- $imgScale = .Get "imgScale" | default .Site.Data.homepage.about.image.scale -}}
+{{ else }}
+  {{- $imgSrc = .Site.Data.homepage.about.image.src -}}
+  {{- $imgWidth = .Site.Data.homepage.about.image.width -}}
+  {{- $imgHeight = .Site.Data.homepage.about.image.height -}}
+  {{- $imgScale = .Site.Data.homepage.about.image.scale -}}
+{{ end }}
+
+{{/* ---------------------------------------------------------------------------
+     BUTTON
+     --------------------------------------------------------------------------- */}}
+{{- $btnURL := "" -}}
+{{- $btnIcon := "" -}}
+{{- $btnText := "" -}}
+
+{{- if $isShortcode }}
+  {{- $btnURL = .Get "button_url" | default .Site.Data.homepage.about.button.URL -}}
+  {{- $btnIcon = .Get "button_icon" | default .Site.Data.homepage.about.button.icon -}}
+  {{- $btnText = .Get "button_text" | default false -}}
+{{ else }}
+  {{- $btnURL = .Site.Data.homepage.about.button.URL -}}
+  {{- $btnIcon = .Site.Data.homepage.about.button.icon -}}
+  {{- $btnText = i18n "about_button" -}}
+{{ end }}
+
+
+<section id="about" class="section rad-animation-group pb-0">
+  <div class="container rad-fade-down">
+    <div class="row d-flex flex-column-reverse flex-md-row">
+      <div class="about__profile-picture col-12 col-md-6">
+        {{ partial "lazypicture" (dict "src" $imgSrc "width" $imgWidth "height" $imgHeight "scale" $imgScale "class" "image-left-overflow")}}
+      </div>
+      <div class="col-12 col-md-6 my-auto my-auto">
+        <h2>{{ $title }}</h2>
+        <div class="about-me content lead">
+          {{ $content }}
+        </div>
+        {{ if $btnText }}
+          <a href="{{ $btnURL | absURL }}" target="_blank" class="btn btn-primary">
+            <i class="{{ $btnIcon }}"></i>
+            {{ $btnText }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>

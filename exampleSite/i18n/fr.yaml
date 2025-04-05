@@ -1,0 +1,61 @@
+## Meta tags
+- id: "meta_title"
+  translation: "Adritian - un thème Hugo haute performance par Adrián Moreno"
+- id: "meta_description"
+  translation: "Ce thème Hugo (Adritian) est basé sur Bootstrap et possède des fonctionnalités qui le rendent adapté pour un site personnel, un portfolio ou d'autres types d'applications monopages."
+- id: "meta_keywords"
+  translation: "hugo, thème, bootstrap, adritian, adrian moreno, site personnel, portfolio, application monopage"
+- id: "meta_author"
+  translation: "Adrián Moreno Peña"
+- id: "meta_image"
+  translation: "/img/general/og-image.jpg"
+
+## Header
+- id: "logo_alt"
+  translation: "Adritian logo"
+- id: "logo_text1"
+  translation: "Cool"
+- id: "logo_text2"
+  translation: "Nom"
+  
+## General
+- id: "skipToMainContent"
+  translation: "Aller au contenu principal"
+- id: "toggle_navigation" 
+  translation: "Basculer la navigation"
+
+## Footer
+- id: "footer_notice"
+  translation: "© Adritian. Thème gratuit Hugo par Adrián Moreno Peña."
+- id: "language"
+  translation: "Langue"
+- id: "toggle_theme"
+  translation: "Changer le thème"
+- id: "theme_light"
+  translation: "☀️ Clair"
+- id: "theme_dark"
+  translation: "🌑 Sombre"
+- id: "theme_auto"
+  translation: "✨ Auto"
+
+## Homepage head title
+- id: "head_title"
+  translation: "Site de démonstration pour Adritian - un thème Hugo haute performance par Adrián Moreno"
+- id: "head_description"
+  translation: "Ce thème Hugo (Adritian) est basé sur Bootstrap et possède des fonctionnalités qui le rendent adapté pour un site personnel, un portfolio ou d'autres types d'applications monopages."
+
+## Blog
+- id: "read_more"
+  translation: "Lire la suite"
+- id: "published_on"
+  translation: "Publié le "
+- id: "continue_reading"
+  translation: "Continuer à lire"
+
+## 404 Page
+- id: "404_title"
+  translation: "Page non trouvée"
+- id: "404_description"
+  translation: "Désolé, mais la page que vous recherchez est introuvable."
+- id: "404_button"
+  translation: "Retour à l'accueil"

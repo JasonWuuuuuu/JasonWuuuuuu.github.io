@@ -1,0 +1,154 @@
+@media print {
+
+    .bd-navbar {
+        box-shadow: none !important;
+    }
+
+    * {
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    body.page-cv [data-bs-theme="dark"] .h1,
+    [data-bs-theme="dark"] .h2,
+    [data-bs-theme="dark"] .h3,
+    [data-bs-theme="dark"] .h4,
+    [data-bs-theme="dark"] .h5,
+    [data-bs-theme="dark"] .h6,
+    [data-bs-theme="dark"] h1,
+    [data-bs-theme="dark"] h2,
+    [data-bs-theme="dark"] h3,
+    [data-bs-theme="dark"] h4,
+    [data-bs-theme="dark"] h5,
+    [data-bs-theme="dark"] h6,
+    [data-bs-theme="dark"] .h1,
+    [data-bs-theme="dark"] .h2,
+    [data-bs-theme="dark"] .h3,
+    [data-bs-theme="dark"] .h4,
+    [data-bs-theme="dark"] .h5,
+    [data-bs-theme="dark"] .h6,
+    [data-bs-theme="dark"] h1,
+    [data-bs-theme="dark"] h2,
+    [data-bs-theme="dark"] h3,
+    [data-bs-theme="dark"] h4,
+    [data-bs-theme="dark"] h5,
+    [data-bs-theme="dark"] h6 {
+        color: black !important;
+    }
+
+    .experience__meta {
+        flex: 0 0 200px;
+    }
+
+    .experience__description {
+        flex: 1 1 400px;
+    }
+
+    .experience__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+
+    p,
+    section {
+        page-break-after: avoid;
+        break-after: avoid;
+        break-before: avoid;
+    }
+
+    p {
+        break-inside: avoid;
+    }
+
+    header {
+        display: none;
+    }
+
+    .section-experience {
+        // Remove decorative elements
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+
+        // Ensure black text on white background
+        color: #000 !important;
+
+        // Adjust spacing
+        padding: 0 !important;
+        margin: 0 !important;
+
+        // Make sure content is visible
+        display: block !important;
+        page-break-inside: avoid;
+
+        .experience {
+            width: 100%;
+            // Improve experience item layout for print
+            page-break-inside: avoid;
+            border: none !important;
+            padding: 0.5cm 0 !important;
+
+            a {
+                // Remove link styling
+                color: inherit !important;
+                text-decoration: none !important;
+                padding: 0 !important;
+                background: none !important;
+            }
+
+            &__company-logo {
+                // Ensure logos print well
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            &__meta {
+                // Adjust text for better print readability
+                color: #000 !important;
+            }
+
+            &__company,
+            &__location,
+            &__date,
+            &__title {
+                color: #000 !important;
+            }
+        }
+
+        // Hide interactive elements
+        .btn,
+        .all-experience-container {
+            display: none !important;
+        }
+    }
+
+    // Ensure job card prints well
+    .job-card {
+        background: none !important;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        padding: 1cm !important;
+        margin-bottom: 1cm !important;
+
+        .company-logo {
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            color: black !important;
+        }
+    }
+}
