@@ -112,7 +112,7 @@ html, body {
 }
 
 .paperBody {
-    /*min-width: 200px;*/
+    min-width: 200px;
 }
 
 .paperIcon {
