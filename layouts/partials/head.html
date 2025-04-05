@@ -1,0 +1,107 @@
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="theme-color" content="#478079"/>
+
+{{- if .Site.Params.analytics.googleTagManager.enabled }}
+<link rel="preconnect" href="https://www.googletagmanager.com">
+{{- end }}
+{{- if .Site.Params.analytics.googleAnalytics.enabled }}
+{{- if .Site.Params.analytics.googleAnalytics.code}}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.analytics.googleAnalytics.code }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ .Site.Params.analytics.googleAnalytics.code}} ');
+</script>
+{{- end }}
+{{- end }}
+
+<title>{{ i18n "head_title" }}</title>
+<meta name="description" content='{{ i18n "head_description" }}'>
+<meta name="generator-mode" content='{{ hugo.Environment }}'>
+{{- $critical := resources.Get "css/critical.css" | resources.Minify }}
+<style data-generator="critical-css">
+{{- $critical.Content | safeCSS }}
+</style>
+
+{{- $cssResources := slice }}
+{{- range .Site.Params.plugins.css }}
+    {{- if findRE "^http" .URL }}
+        <link rel="stylesheet" href="{{ .URL | absURL }}">
+    {{- else }}
+        {{- with resources.Get .URL }}
+            {{- $cssResources = $cssResources | append . }}
+        {{- end }}
+    {{- end }}
+{{- end }}
+
+{{- if gt (len $cssResources) 0 }}
+    {{- $cssBundle := $cssResources | resources.Concat "css/bundle.css" }}
+    {{- $css := $cssBundle }} 
+    {{- if hugo.IsProduction }} 
+        {{- $css = $css | minify | fingerprint | resources.PostProcess }} 
+    {{- end }}
+    <link
+      rel="preload" 
+      href="{{ $css.RelPermalink }}" 
+      as="style" 
+      onload="this.onload=null;this.rel='stylesheet'" 
+      {{ if hugo.IsProduction }} 
+      integrity="{{ $css.Data.Integrity }}" 
+      crossorigin="anonymous"
+      {{ end }}
+    />
+    <noscript>
+      <link 
+        rel="stylesheet"
+        href="{{ $css.RelPermalink }}" 
+        {{ if hugo.IsProduction }} 
+        integrity="{{ $css.Data.Integrity }}" 
+        crossorigin="anonymous"
+        {{ end }}
+      />
+    </noscript>
+{{- end }}
+{{- range .Site.Params.plugins.scss }}
+  {{/* no external scss processing - as they need to be processed by the theme */}}
+  {{- $scss := resources.Get .URL }}
+  {{- $style := false }}
+  {{- if $scss }}
+    {{- $style = $scss | css.Sass }}
+  {{- else }}
+    {{- warnf "SCSS file not found: %s" .URL }}
+  {{- end }}
+  {{- if hugo.IsProduction }} 
+    {{- $style = $scss | css.Sass | resources.Minify | resources.Fingerprint }} 
+  {{- end }}
+{{- if $style }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous"/>
+{{- end }}
+{{- end }}
+
+<!-- printed only it not disabled -->
+{{- if not .Site.Params.colorTheme.auto.disable }}
+{{- $colorModesScript := resources.Get "js/color-modes.js" }}
+{{- if hugo.IsProduction }}
+    {{- $colorModesScript = $colorModesScript | resources.Minify | resources.Fingerprint }}
+{{- end }}
+<script defer src="{{ $colorModesScript.Permalink }}"></script>
+{{- else }}
+<!-- disabled color theme selector -->
+{{- end  }}
+
+{{- if .Site.Params.analytics.google_tag_manager.enabled }}
+<!-- Google tag (gtag.js), google analytics -->
+<script defer src="https://www.googletagmanager.com/gtag/js?id={{.Site.Params.analytics.google_tag_manager.code}}"></script>
+{{- $analytics := resources.Get "js/gtag.js" | resources.Minify }}
+<script defer src="{{ $analytics.Permalink }}"></script>
+{{- else }}
+<!-- no google tag displayed -->
+{{- end }}
+<script src='{{ "js/library/lozad.min.js" | absURL }}'></script>
+
+{{ template "_internal/opengraph.html" . }}

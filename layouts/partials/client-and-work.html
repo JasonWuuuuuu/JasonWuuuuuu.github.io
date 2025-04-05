@@ -1,0 +1,95 @@
+{{/* Used for the Client&Works section in the homepage */}}
+{{/* If some content is missing/not displayed, check the images for the client/work */}}
+
+{{- $contextType := printf "%T" . -}}
+{{- $isShortcode := (eq $contextType "*hugolib.ShortcodeWithPage") -}}
+
+{{/* ---------------------------------------------------------------------------
+     SECTION TITLE
+     --------------------------------------------------------------------------- */}}
+{{- $sectionTitle := "" -}}
+{{- if $isShortcode -}}
+  {{- $sectionTitle = .Get "title" -}}
+{{- else -}}
+  {{- $sectionTitle = i18n "client_work_title" -}}
+{{- end -}}
+
+{{/* ---------------------------------------------------------------------------
+     CLIENTS
+     --------------------------------------------------------------------------- */}}
+{{- $clients := slice -}}
+{{- if not $isShortcode -}}
+  {{- $baseLangSite := .Sites.Default -}}
+  {{- $clients = (where .Site.RegularPages.ByDate.Reverse "Type" "client-work" | lang.Merge (where $baseLangSite.RegularPages.ByDate.Reverse "Type" "client-work") ) -}}
+{{- else -}}
+  {{- $clients = (where .Site.RegularPages.ByDate.Reverse "Type" "client-work") -}}
+{{- end -}}
+
+{{/* ---------------------------------------------------------------------------
+     PROJECTS
+     --------------------------------------------------------------------------- */}}
+{{- $projects := (where .Site.RegularPages.ByDate.Reverse "Type" "projects") -}}
+
+<section id="portfolio" class="section section--border-bottom">
+  <div class="container client-works-container">
+    <h2 class="rad-animation-group rad-fade-down">
+      {{ $sectionTitle }}
+    </h2>
+    <div class="row row--padded rad-animation-group rad-fade-down">
+      <div class="col-12">
+        <div class="clients">
+          {{ range $clients }}
+          <div class="clients__item">
+            <a href="{{ .Params.link }}" aria-label="Link to the client site for {{ .Params.title }} (opens in a new window)" target="_blank">
+
+              {{ partial "lazypicture" (dict "src" .Params.logo.src "scale" .Params.logo.scale "class" "portfolio-project img-responsive")}}
+            </a>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{/* Projects */}}
+    {{ range $index, $element := $projects }}
+    {{ $is_even := eq (mod $index 2) 0 }}
+    {{ with $element }}
+    <div
+      class="row row--padded rad-animation-group rad-fade-down 
+      {{ if $is_even }}flex-column-reverse flex-md-row even-row{{ else }}uneven-row{{ end }}"
+    >
+      {{ if $is_even }}
+      <div class="col-12 col-md-5 mt-4 mt-md-0 my-md-auto even">
+        <h3>{{ .Params.title }}</h3>
+        <div class="lead">
+          {{ .Page.Content }}
+        </div>
+        <a href="{{ .Params.button.URL | absURL }}" class="btn btn-primary"
+          >{{ .Params.button.btnText }}<i class="{{ .Params.button.icon }}"></i
+        ></a>
+      </div>
+      <div class="col-12 col-md-7 pl-md-0 text-right">
+
+
+        {{ partial "lazypicture" (dict "src" .Params.image.src "scale" .Params.image.scale "class" "picture-works even")}}
+
+      </div>
+      {{ else }}
+      <div class="col-12 col-md-7 pl-md-0 text-right not-even">
+
+        {{ partial "lazypicture" (dict "src" .Params.image.src "scale" .Params.image.scale "class" "picture-works odd")}}
+      </div>
+      <div class="col-12 col-md-5 mt-4 mt-md-0 my-md-auto">
+        <h3>{{ .Params.title }}</h3>
+        <div class="lead">
+          {{ .Page.Content }}
+        </div>
+        <a href="{{ .Params.button.URL | absURL }}" class="btn btn-primary"
+          >{{ .Params.button.btnText }}<i class="{{ .Params.button.icon }}"></i
+        ></a>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>

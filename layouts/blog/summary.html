@@ -1,0 +1,40 @@
+<article class="post summary col-12">
+  <header>
+    <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="post-meta">
+      <div>
+        <section>
+          {{ i18n "published_on" }} 
+          <h4 class="date">{{ .Date.Format "Mon Jan 2, 2006" }}</h4> · 
+          <h4 class="wordcount">{{ .WordCount }} Words</h4>
+        </section>
+        {{ with .GetTerms "topics" }}
+        <ul class="topics">
+          {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+        {{ end }} {{ with .GetTerms "tags" }}
+        <ul class="tags">
+          {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </div>
+    </div>
+  </header>
+  <div class="post-summary post-content">
+  {{ .Summary }}
+  </div>
+
+  <footer class="">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <a class="btn btn-outline-secondary btn-sm" href="{{ .RelPermalink }}"
+          >{{ i18n "read_more" }}&nbsp;&raquo;</a
+        >
+      </div>
+    </div>
+  </footer>
+</article>

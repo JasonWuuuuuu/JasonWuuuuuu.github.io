@@ -1,0 +1,48 @@
+{{- $contextType := printf "%T" . -}}
+{{- $isShortcode := (eq $contextType "*hugolib.ShortcodeWithPage") -}}
+
+{{/* ---------------------------------------------------------------------------
+     SECTION TITLE
+     --------------------------------------------------------------------------- */}}
+{{- $title := "" -}}
+{{- if $isShortcode }}
+  {{- $title = .Get "title" -}}
+{{ else }}
+  {{- $title = i18n "testimonials_title" -}}
+{{ end }}
+
+{{/* ---------------------------------------------------------------------------
+     TESTIMONIALS COLLECTION
+     --------------------------------------------------------------------------- */}}
+{{- $testimonials := (where .Site.RegularPages.ByDate "Type" "testimonial") -}}
+{{- if not $isShortcode }}
+  {{- $baseLangSite := .Sites.Default -}}
+  {{- $testimonials = $testimonials | lang.Merge (where $baseLangSite.RegularPages.ByDate "Type" "testimonial") -}}
+{{- end -}}
+
+<section id="testimonial" class="section rad-animation-group section--border-bottom">
+    <div class="container">
+    {{/* 
+    When passed from a shortcode, the context type is *hugolib.ShortcodeWithPage. 
+    When passed from a partial included in a page via params, the context type is *hugolib.pageState. 
+    */}}
+    <h2 class="rad-fade-down">{{ $title }}</h2>
+        <div class="row row--padded mb-0 rad-fade-down">
+            {{ range $testimonials }}
+            <div class="col-12 col-md-4 mb-5 mb-md-0 testimonial container">
+                <i class="icon-quote-left"></i>
+                {{ .Content }}
+                <div class="testimonial__author row gx-0">
+
+                    {{ partial "lazypicture" (dict "src" .Params.image.src "scale" .Params.image.scale "pictureclass" "picture testimonial col-2" "alt" $title)}}
+                    
+                         <div class="testimonial__author-info col-10">
+                        <h3>{{ .Params.name }}</h3>
+                        <span>{{ .Params.position }}</span>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{- $.Lang }}" 
+    {{- if .Site.Params.colorTheme.auto.disable }}
+    data-bs-theme="{{ .Site.Params.colorTheme.forced.theme }}"
+    theme-forced="true"
+    theme-auto="false"
+    {{- end }}>
+<head>
+    {{ partial "head.html" . }}
+    {{ partial "head_custom.html" . }}
+</head>
+
+<body class="{{- if .IsHome }}home{{- end }}{{- with .File }} page-{{- .ContentBaseName }}{{- end }}">
+    {{ partial "header.html" . }}
+
+    <main class="container">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <div class="d-print-none">
+        {{ partial "footer.html" . }}
+    </div>
+    
+    {{ partial "base-foot.html" . }}
+</body>
+</html> 
