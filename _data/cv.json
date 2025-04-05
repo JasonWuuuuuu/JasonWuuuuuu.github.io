@@ -1,16 +1,16 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Jason Wu",
+    "email": "wuj400646@gmail.com",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://jasonwuuuuuu.github.io",
+    "summary": "The blogger graduated with a master's degree in Electronic Information from Xijing University. His research areas include deep learning, diffusion models, object detection, and sequence to sequence prediction tasks. Currently, his research focuses on transportation and intelligent driving. The broadcast published 2 SCI papers and 1 EI conference paper between 2024-2025, and applied for 1 software copyright.",
     "location": {
-      "address": "",
+      "address": "Chongqing Jiaotong University (Jiangjin Campus)",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "city": "Chongqing",
+      "countryCode": "China",
+      "region": "jiangjing"
     },
     "profiles": [
       {
@@ -20,42 +20,42 @@
       },
       {
         "network": "ORCID",
-        "username": "",
-        "url": "http://orcid.org/yourorcidurl"
+        "username": "Haiyang Wu",
+        "url": "https://orcid.org/my-orcid?orcid=0009-0009-2122-7435"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "JasonWuuuuuu",
+        "url": "https://github.com/JasonWuuuuuu"
       }
     ]
   },
   "work": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "Chongiqng jiaotong  University",
+      "area": "Ph.D in traffic transportation engineering",
+      "studyType": "full-time",
+      "startDate": "2025.9.1",
+      "endDate": "2030--",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
+      "institution": "Xijing University",
+      "area": "M.S. in electronic information",
+      "studyType": "full-time",
+      "startDate": "2022.8.15",
+      "endDate": "2025.1.6",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "institution": "Chongqing College of Mobile Communication",
+      "area": "B.S. in electronic engineering and automation",
+      "studyType": "full-time",
+      "startDate": "2018.9.1",
+      "endDate": "2022.7.1",
       "gpa": null,
       "courses": []
     }
@@ -66,32 +66,25 @@
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Crack Detection on Road Surfaces Based on Improved YOLOv8",
+      "publisher": "IEEE Access",
+      "releaseDate": "2024-12-16",
+      "website": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10802889",
+      "summary": "Road defect detection is vital for road maintenance but remains challenging due to the complexity of backgrounds, low resolution, and crack similarity. This paper introduces YOLOv8-VOS(VOS means ‘vanillaNet+ODConv+SEAttention’), an enhanced road crack detection algorithm that incorporates an improved Vanilla Net backbone with Squeeze-and-Excitation (SE) attention and ODConv modules. The loss function is replaced with WIoU to better balance bounding box regression. Experiments on the RDD2022 dataset demonstrate a 2% improvement in average accuracy over the original YOLOv8, achieving 53.7%. The proposed model effectively identifies road cracks in complex traffic backgrounds, contributing to safer and more efficient road maintenance."
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "Open-set image segmentation based on an improved Segment Anything model",
+      "publisher": "2024 6th International Conference on Robotics, Intelligent Control and Artificial Intelligence (RICAI)",
+      "releaseDate": "2025-03-13",
+      "website": "10.1109/RICAI64321.2024.10911698",
+      "summary": "Image segmentation is crucial in computer vision, but traditional approaches are limited by dataset and label diversity. Segment Anything introduces open-set segmentation capabilities but struggles with clause-level prompts and precise mask edges. This paper presents SAM-TP, a new algorithm combining Grounding DINO for clause-level prompt handling and Segment Anything for segmentation. By integrating non-maximum suppression and connected component denoising, we refine segmentation accuracy. Additionally, incorporating ViT-Matte enhances edge precision through a trimap-based structure. Experiments on the COCO2017 dataset show that SAM-TP improves Mean Pixel Accuracy by 6.04%, achieving 24.74%, demonstrating its enhanced foreground-background segmentation ability."
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Remote Sensing Image Super-Resolution Reconstruction by Fusing Multi-Scale Receptive Fields and Hybrid Transformer",
+      "publisher": "Scientific Reports",
+      "releaseDate": "2025-01-16",
+      "website": "https://www.nature.com/articles/s41598-025-86446-5",
+      "summary": "To enhance high-frequency perceptual information and texture details in remote sensing images and address the challenges of super-resolution reconstruction algorithms during training, particularly the issue of missing details, this paper proposes an improved remote sensing image super-resolution reconstruction model. The generator network of the model employs multi-scale convolutional kernels to extract image features and utilizes a multi-head self-attention mechanism to dynamically fuse these features, significantly improving the ability to capture both fine details and global information in remote sensing images. Additionally, the model introduces a multi-stage Hybrid Transformer structure, which processes features at different resolutions progressively, from low resolution to high resolution, substantially enhancing reconstruction quality and detail recovery. The discriminator combines multi-scale convolution, global Transformer, and hierarchical feature discriminators, providing a comprehensive and refined evaluation of image quality. Finally, the model incorporates a Charbonnier loss function and total variation (TV) loss function, which significantly improve training stability and accelerate convergence. Experimental results demonstrate that the proposed method, compared to the SRGAN algorithm, achieves average improvements of approximately 3.61 dB in Peak Signal-to-Noise Ratio (PSNR), 0.070 (8.2%) in Structural Similarity Index (SSIM), and 0.030 (3.1%) in Feature Similarity Index (FSIM) across multiple datasets, showing significant performance gains."
     }
   ],
   "presentations": [
