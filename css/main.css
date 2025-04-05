@@ -68,3 +68,45 @@ h1:before,.anchor:before {
     border: 0px solid #f2f3f3;
     border-radius: 0
 }
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-xs-12,
+.col-sm-3,
+.col-sm-9,
+.col-sm-12,
+.col-md-3,
+.col-md-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* 确保图片和容器是响应式的 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.paper-box,
+.col-sm-12.col-md-12.mb-4 {
+    width: 100%;
+}
