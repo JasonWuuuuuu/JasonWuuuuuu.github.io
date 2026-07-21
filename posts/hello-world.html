@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开篇 · 我为什么开始写这个博客 — 伍海洋 Haiyang Wu</title>
+<meta name="description" content="博客开篇：从电气工程跨界到交通运输的博士生，聊聊为什么开始写博客，以及打算写些什么。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- ===== 导航 ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html">Haiyang<span>Wu</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">关于</a></li>
+      <li><a href="../index.html#news">动态</a></li>
+      <li><a href="../index.html#education">教育</a></li>
+      <li><a href="../index.html#research">研究</a></li>
+      <li><a href="../index.html#projects">项目</a></li>
+      <li><a href="../index.html#publications">论文</a></li>
+      <li><a href="../index.html#honors">荣誉</a></li>
+      <li><a href="../blog.html" class="active">博客</a></li>
+      <li><a href="../index.html#contact">联系</a></li>
+      <li><a href="en-hello-world.html" class="lang-switch" title="English version">EN / 中</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== 文章页头 ===== -->
+<header class="post-hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <a class="post-back" href="../blog.html">← 返回博客</a>
+    <div class="post-card-head">
+      <time class="post-date" datetime="2026-07-21">2026.07.21</time>
+      <div class="post-tags">
+        <span class="post-tag">研究笔记</span>
+        <span class="post-tag">开篇</span>
+      </div>
+    </div>
+    <h1 class="post-title-main">开篇 · 我为什么开始写这个博客</h1>
+    <p class="post-meta-line">
+      <span>伍海洋 Haiyang Wu</span>
+      <span class="dot-sep">·</span>
+      <span>⏱ 约 5 分钟阅读</span>
+    </p>
+  </div>
+</header>
+
+<main>
+<article class="post-article section">
+  <div class="container post-content">
+
+    <p>
+      作为一个从电气工程"跨界"到交通运输的博士生，我常常被问到一个问题：
+      <em>"你一个学强电的，怎么跑去搞交通了？"</em>
+      每次回答都略显仓促。开这个博客，一半是想给自己一个把想法写下来的地方，
+      另一半也是想把那些"仓促的回答"慢慢写完整。
+    </p>
+
+    <h2 id="why">为什么开始写？</h2>
+    <p>
+      读博之后我才发现一件事：研究做得越多，能讲清楚的人反而越少。
+      论文写得很正式，但那些"为什么走这条路"、"哪里卡了三个月"、"为什么放弃了第一个方案"的故事，
+      全都被压成了一行 acknowledgement。可恰恰是这些被压扁的部分，才是真正能帮到别人的东西。
+    </p>
+    <p>
+      所以我想，与其把这些笔记留在 Obsidian 的某个角落里发霉，不如放到一个公开的地方——
+      哪怕只有一个人在搜索时偶然点进来，看到我说"这个问题我也踩过坑"，也算值了。
+    </p>
+
+    <blockquote>
+      <p>写作不是把已经想清楚的事情抄下来，而是想清楚一件事的过程本身。</p>
+      <cite>—— 某个我现在想不起来是谁的人，但这话我一直记着</cite>
+    </blockquote>
+
+    <h2 id="what">我打算写些什么？</h2>
+    <p>大致会是这么几类内容：</p>
+    <ul>
+      <li><strong>研究笔记</strong> — 换道交互建模、因果推断、轨迹规划这些方向的方法梳理与踩坑记录。</li>
+      <li><strong>工程实战</strong> — 边缘部署、设备选型、算法落地时遇到的真实问题，能复现就尽量复现。</li>
+      <li><strong>论文阅读</strong> — 读到值得记一笔的论文，写一两段自己的理解。</li>
+      <li><strong>博士生活</strong> — 一些非技术的东西：时间管理、心态、和导师的沟通，可能还有一些书评。</li>
+    </ul>
+
+    <h2 id="template">一个排版示例</h2>
+    <p>
+      下面这一段是为了让你（以及未来的我）看看这个博客支持哪些排版元素，
+      后续写新文章时可以照着复制结构。包括：标题、列表、引用、代码块、图片、表格。
+    </p>
+
+    <h3 id="lists">列表</h3>
+    <p>有序列表：</p>
+    <ol>
+      <li>提出问题</li>
+      <li>读已有文献，找 baseline</li>
+      <li>设计方法，跑实验</li>
+      <li>对比、消融、写论文</li>
+      <li>被拒 → 回到第 3 步 😅</li>
+    </ol>
+    <p>无序列表：</p>
+    <ul>
+      <li>Python 是主力语言</li>
+      <li>PyTorch &gt; TensorFlow（主观）</li>
+      <li>VS Code + vim 插件永远的神</li>
+    </ul>
+
+    <h3 id="quote">引用</h3>
+    <blockquote>
+      <p>All models are wrong, but some are useful.</p>
+      <cite>—— George E. P. Box</cite>
+    </blockquote>
+
+    <h3 id="code">代码块</h3>
+    <p>下面是一段 Python 代码示例（一个最简单的车跟驰模型）：</p>
+<pre><code>import numpy as np
+
+def krauss(v: float, v_desired: float, dt: float, a_max: float = 1.5) -> float:
+    """最朴素的跟驰速度更新。"""
+    # 加速到期望速度，但不超过最大加速度
+    if v &lt; v_desired:
+        v_next = min(v + a_max * dt, v_desired)
+    else:
+        v_next = max(v - a_max * dt, v_desired)
+    return max(0.0, v_next)
+
+# 模拟 10 秒
+v, t = 0.0, 0.0
+while t &lt; 10.0:
+    v = krauss(v, v_desired=20.0, dt=0.1)
+    print(f"t={t:.1f}s  v={v:.2f} m/s")
+    t += 0.1</code></pre>
+
+    <h3 id="image">图片</h3>
+    <figure class="post-figure">
+      <img src="../assets/photo.jpg" alt="作者照片">
+      <figcaption>图 1：作者本人（也顺便给博客首页导点流量 😄）。</figcaption>
+    </figure>
+
+    <h3 id="table">表格</h3>
+    <table class="post-table">
+      <thead>
+        <tr><th>研究方向</th><th>典型方法</th><th>我目前的关注点</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>换道交互建模</td><td>IIS 聚类 / HMM</td><td>可解释的交互模式</td></tr>
+        <tr><td>轨迹规划</td><td>MPC + 因果先验</td><td>类人化换道</td></tr>
+        <tr><td>视觉感知</td><td>YOLO / SAM</td><td>交通违法行为识别</td></tr>
+        <tr><td>边缘部署</td><td>TensorRT / ONNX</td><td>农村道路场景</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="finally">最后</h2>
+    <p>
+      如果你想就智能网联汽车、混合交通流、交通 AI 工程化这些方向聊聊，
+      欢迎在<a href="../index.html#contact">联系方式</a>里找到我的邮箱。
+      这个博客不追求更新频率，只追求每一篇都至少让我自己有所得。
+    </p>
+    <p>
+      那么，开篇就这样。<br>
+      下次见。
+    </p>
+
+    <p class="post-end-mark">— 完 —</p>
+
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 伍海洋 Haiyang Wu · 重庆交通大学 交通运输学院 · 空地协同交通管控与技术装备实验室</p>
+    <p class="en dim">Built with passion for transportation science.</p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  // 博客文章页不需要 scroll-spy，禁用它避免报错
+  document.querySelectorAll('section[id]').forEach(s => s.removeAttribute('id'));
+</script>
+</body>
+</html>

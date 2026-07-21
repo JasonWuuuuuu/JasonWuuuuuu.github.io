@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>博客 · 伍海洋 Haiyang Wu</title>
+<meta name="description" content="伍海洋的个人博客 — 智能网联汽车、混合交通流、交通 AI 工程化的研究随笔与工程笔记。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== 导航 ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Haiyang<span>Wu</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">关于</a></li>
+      <li><a href="index.html#news">动态</a></li>
+      <li><a href="index.html#education">教育</a></li>
+      <li><a href="index.html#research">研究</a></li>
+      <li><a href="index.html#projects">项目</a></li>
+      <li><a href="index.html#publications">论文</a></li>
+      <li><a href="index.html#honors">荣誉</a></li>
+      <li><a href="blog.html" class="active">博客</a></li>
+      <li><a href="index.html#contact">联系</a></li>
+      <li><a href="en-blog.html" class="lang-switch" title="English version">EN / 中</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== 博客页头 ===== -->
+<header class="blog-hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <p class="hero-kicker">Blog · 研究随笔与工程笔记</p>
+    <h1>博客 <span class="en">Blog</span></h1>
+    <p class="blog-sub">
+      这里记录我在智能网联汽车、混合交通流、交通 AI 工程化方向的研究随笔、
+      代码笔记、踩坑复盘，以及一些博士生活的碎碎念。<br>
+      <span class="dim">不定期更新，欢迎订阅与交流。</span>
+    </p>
+    <div class="blog-tags">
+      <span># 研究笔记</span><span># 工程实战</span><span># 论文阅读</span><span># 博士生活</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== 文章列表 ===== -->
+<section class="section">
+  <div class="container">
+    <h2 class="sec-title">最新文章 <span class="en">Latest Posts</span></h2>
+
+    <article class="card post-card">
+      <div class="post-card-head">
+        <time class="post-date" datetime="2026-07-21">2026.07.21</time>
+        <div class="post-tags">
+          <span class="post-tag">研究笔记</span>
+          <span class="post-tag">开篇</span>
+        </div>
+      </div>
+      <h3 class="post-title"><a href="posts/hello-world.html">开篇 · 我为什么开始写这个博客</a></h3>
+      <p class="post-excerpt">
+        作为一个从电气工程"跨界"到交通运输的博士生，我常常在想：研究的意义到底是什么？
+        这篇开篇里，我会聊聊我为什么决定开这个博客，打算写些什么，以及那些促使我开始动笔的瞬间。
+        也顺便当作一个排版模板——你可以看到标题、列表、引用、代码块、图片长什么样。
+      </p>
+      <div class="post-meta">
+        <span>⏱ 约 5 分钟阅读</span>
+        <a class="post-more" href="posts/hello-world.html">阅读全文 →</a>
+      </div>
+    </article>
+
+    <!-- 后续文章请复制上面的 <article> 块到这里修改即可 -->
+    <!--
+    <article class="card post-card">
+      <div class="post-card-head">
+        <time class="post-date" datetime="YYYY-MM-DD">YYYY.MM.DD</time>
+        <div class="post-tags">
+          <span class="post-tag">标签1</span>
+          <span class="post-tag">标签2</span>
+        </div>
+      </div>
+      <h3 class="post-title"><a href="posts/your-post-slug.html">文章标题</a></h3>
+      <p class="post-excerpt">文章摘要，一两百字为宜，吸引读者点进去……</p>
+      <div class="post-meta">
+        <span>⏱ 约 X 分钟阅读</span>
+        <a class="post-more" href="posts/your-post-slug.html">阅读全文 →</a>
+      </div>
+    </article>
+    -->
+
+    <div class="blog-empty">
+      <p class="dim">更多文章正在路上 🚧 —— 后续更新的文章都会出现在这里。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 伍海洋 Haiyang Wu · 重庆交通大学 交通运输学院 · 空地协同交通管控与技术装备实验室</p>
+    <p class="en dim">Built with passion for transportation science.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // 博客页复用主页的导航交互，但不需要 scroll-spy 高亮
+  document.querySelectorAll('section[id]').forEach(s => s.removeAttribute('id'));
+</script>
+</body>
+</html>

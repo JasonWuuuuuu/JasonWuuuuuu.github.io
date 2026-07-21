@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello, World — Why I Started This Blog · Jason Wu</title>
+<meta name="description" content="Blog opener: a Ph.D. student who crossed over from EE into transportation — on why I started writing, and what I plan to post about.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/en.css">
+</head>
+<body>
+
+<!-- custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- aurora + grid + particles -->
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+</div>
+<div class="grid-overlay" aria-hidden="true"></div>
+<canvas class="particles" id="particles" aria-hidden="true"></canvas>
+
+<!-- nav -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../en.html">
+      <span class="logo-bracket">&lt;</span>Jason<span class="logo-accent">Wu</span><span class="logo-bracket">/&gt;</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../en.html#about">About</a></li>
+      <li><a href="../en.html#news">News</a></li>
+      <li><a href="../en.html#education">Education</a></li>
+      <li><a href="../en.html#research">Research</a></li>
+      <li><a href="../en.html#projects">Projects</a></li>
+      <li><a href="../en.html#publications">Publications</a></li>
+      <li><a href="../en.html#honors">Honors</a></li>
+      <li><a href="../en-blog.html" class="active">Blog</a></li>
+      <li><a href="../en.html#contact">Contact</a></li>
+      <li><a href="hello-world.html" class="lang-switch" title="中文版">中 / EN</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- post hero -->
+<header class="post-hero" id="top">
+  <div class="container">
+    <a class="post-back" href="../en-blog.html" data-magnetic>
+      <span class="btn-arrow" style="transform:rotate(180deg)">→</span> <span>Back to blog</span>
+    </a>
+    <div class="post-card-head">
+      <time class="post-date" datetime="2026-07-21">2026.07.21</time>
+      <div class="post-tags">
+        <span class="post-tag">research</span>
+        <span class="post-tag">opener</span>
+      </div>
+    </div>
+    <h1 class="post-title-main">
+      <span class="hero-hello">// hello, world —</span>
+      <span class="hero-name">Why I Started This Blog</span>
+    </h1>
+    <p class="post-meta-line">
+      <span>Jason Wu</span>
+      <span class="dot-sep">·</span>
+      <span>⏱ ~5 min read</span>
+    </p>
+  </div>
+</header>
+
+<main>
+<article class="post-article section">
+  <div class="container post-content">
+
+    <p>
+      As a Ph.D. student who crossed over from electrical engineering into transportation, I keep getting asked:
+      <em>"You studied power engineering — why traffic?"</em>
+      My answers always felt rushed. This blog is half a place to put those thoughts down,
+      and half an attempt to stretch those rushed answers into something complete.
+    </p>
+
+    <h2 id="why">Why start writing?</h2>
+    <p>
+      Once I started the Ph.D. I noticed something odd: the more research I did, the fewer people I could
+      explain it to. Papers are written formally — but the "why I picked this direction", "where I got stuck
+      for three months", "why we threw out the first approach" stories all get compressed into a single line
+      of acknowledgements. Yet those flattened parts are exactly what would actually help someone else.
+    </p>
+    <p>
+      So instead of letting those notes moulder in some forgotten Obsidian vault, I figured I'd put them
+      somewhere public — even if just one person stumbles in from a search, sees me say "I hit this bug too",
+      and feels a little less alone, that's worth it.
+    </p>
+
+    <blockquote>
+      <p>Writing isn't transcribing what you already know — it's the act of figuring it out.</p>
+      <cite>— someone I can't remember, but the line stuck</cite>
+    </blockquote>
+
+    <h2 id="what">What will I write about?</h2>
+    <p>Roughly four buckets:</p>
+    <ul>
+      <li><strong>Research notes</strong> — method walkthroughs and gotchas in lane-change interaction modeling, causal inference, trajectory planning.</li>
+      <li><strong>Engineering in the wild</strong> — real problems from edge deployment, device selection, algorithm landing; reproducible when I can manage it.</li>
+      <li><strong>Paper readings</strong> — short takes on papers worth remembering.</li>
+      <li><strong>Ph.D. life</strong> — non-technical stuff: time management, mindset, talking with advisors, maybe some book notes.</li>
+    </ul>
+
+    <h2 id="template">A typography demo</h2>
+    <p>
+      This section exists so future-me (and you) can see what this blog supports:
+      headings, lists, quotes, code blocks, images, tables. Copy the structure when writing new posts.
+    </p>
+
+    <h3 id="lists">Lists</h3>
+    <p>Ordered:</p>
+    <ol>
+      <li>Ask the question</li>
+      <li>Read prior work, find baselines</li>
+      <li>Design the method, run experiments</li>
+      <li>Compare, ablate, write the paper</li>
+      <li>Get rejected → go back to step 3 😅</li>
+    </ol>
+    <p>Unordered:</p>
+    <ul>
+      <li>Python is my main language</li>
+      <li>PyTorch &gt; TensorFlow (subjective)</li>
+      <li>VS Code + vim plugin, always</li>
+    </ul>
+
+    <h3 id="quote">Blockquote</h3>
+    <blockquote>
+      <p>All models are wrong, but some are useful.</p>
+      <cite>— George E. P. Box</cite>
+    </blockquote>
+
+    <h3 id="code">Code block</h3>
+    <p>A tiny Python example — the simplest possible car-following update:</p>
+<pre><code>import numpy as np
+
+def krauss(v: float, v_desired: float, dt: float, a_max: float = 1.5) -> float:
+    """Naive car-following velocity update."""
+    # Accelerate toward desired speed, capped by a_max
+    if v &lt; v_desired:
+        v_next = min(v + a_max * dt, v_desired)
+    else:
+        v_next = max(v - a_max * dt, v_desired)
+    return max(0.0, v_next)
+
+# Simulate 10 seconds
+v, t = 0.0, 0.0
+while t &lt; 10.0:
+    v = krauss(v, v_desired=20.0, dt=0.1)
+    print(f"t={t:.1f}s  v={v:.2f} m/s")
+    t += 0.1</code></pre>
+
+    <h3 id="image">Image</h3>
+    <figure class="post-figure">
+      <img src="../assets/photo.jpg" alt="Author portrait">
+      <figcaption>Fig. 1 — Yours truly (also: free traffic to the homepage 😄).</figcaption>
+    </figure>
+
+    <h3 id="table">Table</h3>
+    <table class="post-table">
+      <thead>
+        <tr><th>Direction</th><th>Typical methods</th><th>My current focus</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lane-change interaction</td><td>IIS clustering / HMM</td><td>Explainable patterns</td></tr>
+        <tr><td>Trajectory planning</td><td>MPC + causal priors</td><td>Human-like lane changes</td></tr>
+        <tr><td>Vision perception</td><td>YOLO / SAM</td><td>Traffic-violation recognition</td></tr>
+        <tr><td>Edge deployment</td><td>TensorRT / ONNX</td><td>Rural-road scenarios</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="finally">Finally</h2>
+    <p>
+      If you'd like to chat about connected &amp; automated vehicles, mixed-traffic flow, or traffic-AI
+      engineering, my email is over at the <a href="../en.html#contact">contact</a> section.
+      This blog doesn't chase a posting schedule — only that each piece teaches me something.
+    </p>
+    <p>
+      So, that's the opener.<br>
+      See you next time.
+    </p>
+
+    <p class="post-end-mark">— end —</p>
+
+  </div>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-logo">Jason<span class="logo-accent">Wu</span></p>
+    <p>© 2026 · Chongqing Jiaotong University · School of Traffic &amp; Transportation</p>
+    <p class="muted">Air-Ground Cooperative Traffic Control &amp; Technical Equipment Lab · Built with passion for transportation science.</p>
+    <p class="footer-switch"><a href="hello-world.html">← 阅读中文版</a></p>
+  </div>
+</footer>
+
+<script src="../js/en.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog · Jason Wu</title>
+<meta name="description" content="Jason Wu's blog — research notes & engineering logs on connected & automated vehicles, mixed-traffic flow, and deployable traffic AI.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/en.css">
+</head>
+<body>
+
+<!-- custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- aurora + grid + particles -->
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+</div>
+<div class="grid-overlay" aria-hidden="true"></div>
+<canvas class="particles" id="particles" aria-hidden="true"></canvas>
+
+<!-- nav -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="en.html">
+      <span class="logo-bracket">&lt;</span>Jason<span class="logo-accent">Wu</span><span class="logo-bracket">/&gt;</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="en.html#about">About</a></li>
+      <li><a href="en.html#news">News</a></li>
+      <li><a href="en.html#education">Education</a></li>
+      <li><a href="en.html#research">Research</a></li>
+      <li><a href="en.html#projects">Projects</a></li>
+      <li><a href="en.html#publications">Publications</a></li>
+      <li><a href="en.html#honors">Honors</a></li>
+      <li><a href="en-blog.html" class="active">Blog</a></li>
+      <li><a href="en.html#contact">Contact</a></li>
+      <li><a href="blog.html" class="lang-switch" title="中文版">中 / EN</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- blog hero -->
+<header class="blog-hero" id="top">
+  <div class="container">
+    <p class="hero-kicker">
+      <span class="kick-dot"></span> Blog · Research notes &amp; engineering logs
+    </p>
+    <h1 class="blog-title">
+      <span class="hero-hello">// the</span>
+      <span class="hero-name">Blog</span>
+    </h1>
+    <p class="blog-sub">
+      Research notes, code experiments, paper readings, and the occasional Ph.D. life reflection —
+      on connected &amp; automated vehicles, mixed-traffic flow, and deployable traffic AI.
+      <br><span class="muted">Updated irregularly. Subscribe &amp; chat welcome.</span>
+    </p>
+    <div class="hero-tags">
+      <span>🔬 research notes</span>
+      <span>⚙️ engineering</span>
+      <span>📚 paper readings</span>
+      <span>🎓 ph.d. life</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section">
+  <div class="container">
+    <h2 class="sec-title">
+      <span class="sec-idx">/01</span>
+      Latest Posts
+      <span class="sec-line"></span>
+    </h2>
+
+    <article class="glass-card post-card tilt">
+      <div class="post-card-head">
+        <time class="post-date" datetime="2026-07-21">2026.07.21</time>
+        <div class="post-tags">
+          <span class="post-tag">research</span>
+          <span class="post-tag">opener</span>
+        </div>
+      </div>
+      <h3 class="post-title"><a href="posts/en-hello-world.html">Hello, World — Why I Started This Blog</a></h3>
+      <p class="post-excerpt">
+        As a Ph.D. student who crossed over from electrical engineering into transportation, I keep asking myself:
+        what is research actually for? In this opener I'll explain why I finally started writing, what I plan to
+        post about, and the moments that pushed me to hit publish. It also doubles as a typography template —
+        you'll see how headings, lists, quotes, code blocks, and images render.
+      </p>
+      <div class="post-meta">
+        <span class="post-read">⏱ ~5 min read</span>
+        <a class="post-more" href="posts/en-hello-world.html" data-magnetic>
+          <span>Read more</span> <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Copy the <article> block above to add more posts -->
+    <!--
+    <article class="glass-card post-card tilt">
+      <div class="post-card-head">
+        <time class="post-date" datetime="YYYY-MM-DD">YYYY.MM.DD</time>
+        <div class="post-tags">
+          <span class="post-tag">tag1</span>
+          <span class="post-tag">tag2</span>
+        </div>
+      </div>
+      <h3 class="post-title"><a href="posts/your-post-slug.html">Post Title</a></h3>
+      <p class="post-excerpt">One or two sentences to hook the reader…</p>
+      <div class="post-meta">
+        <span class="post-read">⏱ ~X min read</span>
+        <a class="post-more" href="posts/your-post-slug.html" data-magnetic>
+          <span>Read more</span> <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </article>
+    -->
+
+    <div class="blog-empty">
+      <p class="muted">More posts incoming 🚧 — everything new will land right here.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-logo">Jason<span class="logo-accent">Wu</span></p>
+    <p>© 2026 · Chongqing Jiaotong University · School of Traffic &amp; Transportation</p>
+    <p class="muted">Air-Ground Cooperative Traffic Control &amp; Technical Equipment Lab · Built with passion for transportation science.</p>
+    <p class="footer-switch"><a href="blog.html">← 返回中文博客</a></p>
+  </div>
+</footer>
+
+<script src="js/en.js"></script>
+</body>
+</html>
