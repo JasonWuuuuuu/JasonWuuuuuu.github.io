@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jason Wu — Researcher · CAV · Traffic AI</title>
+<meta name="description" content="Jason Wu (Haiyang Wu) — Ph.D. candidate in Transportation Engineering at Chongqing Jiaotong University. Research: connected & automated vehicles, mixed-traffic flow, causal-knowledge-guided trajectory planning, deployable traffic AI.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/en.css">
+</head>
+<body>
+
+<!-- ===== custom cursor ===== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===== aurora blobs ===== -->
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+  <span class="blob b4"></span>
+</div>
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<!-- ===== particle canvas ===== -->
+<canvas class="particles" id="particles" aria-hidden="true"></canvas>
+
+<!-- ===== nav ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top" data-magnetic>
+      <span class="logo-bracket">&lt;</span>Jason<span class="logo-accent">Wu</span><span class="logo-bracket">/&gt;</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about"><span class="nav-idx">01</span>About</a></li>
+      <li><a href="#news"><span class="nav-idx">02</span>News</a></li>
+      <li><a href="#education"><span class="nav-idx">03</span>Education</a></li>
+      <li><a href="#research"><span class="nav-idx">04</span>Research</a></li>
+      <li><a href="#projects"><span class="nav-idx">05</span>Projects</a></li>
+      <li><a href="#publications"><span class="nav-idx">06</span>Publications</a></li>
+      <li><a href="#honors"><span class="nav-idx">07</span>Honors</a></li>
+      <li><a href="#contact"><span class="nav-idx">08</span>Contact</a></li>
+      <li><a href="index.html" class="lang-switch" title="中文版">中 / EN</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== hero ===== -->
+<header class="hero" id="top">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="hero-kicker">
+        <span class="kick-dot"></span> Ph.D. Candidate · Transportation Engineering · 2025
+      </p>
+      <h1>
+        <span class="hero-hello">Hi, I'm</span>
+        <span class="hero-name" data-text="Jason Wu">Jason Wu</span>
+        <span class="hero-alias">// Haiyang Wu · 伍海洋</span>
+      </h1>
+      <p class="hero-sub">
+        <span class="typewriter" id="typewriter"></span><span class="caret">▋</span>
+      </p>
+      <p class="hero-lab">
+        <span class="lab-pin">▸</span>
+        Air-Ground Cooperative Traffic Control &amp; Technical Equipment Lab<br>
+        Advisor: <strong>Prof. Xiaoyu Cai</strong> · Chongqing Jiaotong University
+      </p>
+      <div class="hero-tags">
+        <span>🚗 Connected &amp; Automated Vehicles</span>
+        <span>🛰️ Vehicle–Infrastructure Cooperation</span>
+        <span>🌀 Traffic Flow Modeling</span>
+        <span>👁️ Computer Vision</span>
+        <span>⚡ Edge Computing</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn primary" href="#publications" data-magnetic>
+          <span>View Publications</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a class="btn ghost" href="#projects" data-magnetic>
+          <span>Recent Projects</span>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span><b>3</b> SCI papers</span>
+        <span class="dot-sep">·</span>
+        <span><b>1</b> EI conference</span>
+        <span class="dot-sep">·</span>
+        <span><b>2</b> under review</span>
+        <span class="dot-sep">·</span>
+        <span><b>1</b> software copyright</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <img src="assets/photo.jpg" alt="Jason Wu portrait">
+        <div class="photo-glow"></div>
+        <div class="photo-scan"></div>
+      </div>
+      <div class="photo-badge">
+        <span class="badge-orbit">●</span>
+        <span>ONLINE · Ph.D. mode</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Connected &amp; Automated Vehicles ✦ Lane-Change Interaction ✦ Causal-Knowledge-Guided Trajectory Planning ✦ Edge AI Deployment ✦ Traffic Vision Perception ✦ Mixed Traffic Flow ✦ YOLO / SAM ✦ Rural Traffic Safety ✦ Air-Ground Cooperation ✦ </span>
+      <span>Connected &amp; Automated Vehicles ✦ Lane-Change Interaction ✦ Causal-Knowledge-Guided Trajectory Planning ✦ Edge AI Deployment ✦ Traffic Vision Perception ✦ Mixed Traffic Flow ✦ YOLO / SAM ✦ Rural Traffic Safety ✦ Air-Ground Cooperation ✦ </span>
+    </div>
+  </div>
+
+  <div class="hero-scroll"><span></span><span class="sr-only">scroll</span></div>
+</header>
+
+<main>
+
+<!-- ===== about ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="sec-title">
+      <span class="sec-idx">/01</span>
+      About Me
+      <span class="sec-line"></span>
+    </h2>
+    <div class="about-grid">
+      <div class="about-main glass-card tilt">
+        <p>
+          I'm <strong class="grad-text">Jason Wu (Haiyang Wu)</strong>, a 2025-entry academic Ph.D. candidate in
+          Transportation Engineering at the School of Traffic &amp; Transportation, Chongqing Jiaotong University,
+          advised by <strong>Prof. Xiaoyu Cai</strong> in the
+          <strong>Air-Ground Cooperative Traffic Control &amp; Technical Equipment Laboratory</strong>.
+        </p>
+        <p>
+          My research centers on <strong>Connected &amp; Automated Vehicles (CAV) in mixed human–machine traffic</strong> —
+          lane-change interaction mechanisms, trajectory planning, causal-knowledge-guided prediction modeling, and
+          <strong>deployable traffic AI</strong> spanning algorithm R&amp;D, edge deployment, and server-side integration.
+        </p>
+        <p>
+          I hold a B.Eng. in Electrical Engineering &amp; Automation from Chongqing College of Mobile Communication and
+          an M.Eng. in Electronic Information (Control Engineering) from Xijing University (advisors:
+          Prof. Lingyun Kong &amp; Prof. Lili Han). Trained in classical control &amp; electronics, I now深耕 transportation —
+          yet never lost my love for classical control theory. During undergrad I served as president of the campus
+          literary society: <em>beyond engineering, words &amp; expression matter just as much.</em>
+        </p>
+        <div class="quote-block">
+          <span class="quote-mark">"</span>
+          Engineering algorithms that survive the field — not just the paper.
+          <span class="quote-mark close">"</span>
+        </div>
+      </div>
+      <aside class="about-side">
+        <div class="glass-card info-card tilt">
+          <h3><span class="card-pulse"></span>Info <span class="muted">/ identity</span></h3>
+          <ul class="info-list">
+            <li><span class="k">Affil.</span><span class="v">CQJTU · School of Traffic &amp; Transportation</span></li>
+            <li><span class="k">Role</span><span class="v">2025 Ph.D. (Transportation Eng.)</span></li>
+            <li><span class="k">Advisor</span><span class="v">Prof. Xiaoyu Cai</span></li>
+            <li><span class="k">Lab</span><span class="v">Air-Ground Cooperative Traffic Control &amp; Tech. Equipment</span></li>
+            <li><span class="k">ORCID</span><span class="v"><a href="https://orcid.org/my-orcid?orcid=0009-0009-2122-7435" target="_blank" rel="noopener">0009-0009-2122-7435 ↗</a></span></li>
+            <li><span class="k">Email</span><span class="v"><a href="mailto:wuj400646@gmail.com">wuj400646@gmail.com</a></span></li>
+            <li><span class="k">GitHub</span><span class="v"><a href="https://github.com/JasonWuuuuuu" target="_blank" rel="noopener">@JasonWuuuuuu ↗</a></span></li>
+          </ul>
+        </div>
+        <div class="glass-card stats-card tilt">
+          <div class="stat" data-count="3"><b>0</b><span>SCI papers</span></div>
+          <div class="stat" data-count="1"><b>0</b><span>EI conference</span></div>
+          <div class="stat" data-count="2"><b>0</b><span>Under review</span></div>
+          <div class="stat" data-count="1"><b>0</b><span>Software ©</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== news ===== -->
+<section id="news" class="section alt">
+  <div class="container">
+    <h2 class="sec-title">
+      <span class="sec-idx">/02</span>
+      Latest News
+      <span class="sec-line"></span>
+    </h2>
+    <ul class="news-list">
+      <li>
+        <time>2026.05</time>
+        <div>
+          Served as <strong>algorithm lead &amp; technical director</strong> on the
+          <em>"Digital Front-End Upgrade of 52 Traffic Safety Persuasion Stations in Qijiang District"</em> —
+          featured in <a href="https://cqrb.cn/contry/dy33/2026-05-19/2672298_pc.html" target="_blank" rel="noopener">Chongqing Daily ↗</a>.
+          Pilot areas saw a gradual decline in violations and a marked rise in public compliance.
+          <span class="news-tag">media</span>
+        </div>
+      </li>
+      <li>
+        <time>2026.04</time>
+        <div>
+          Longitudinal paper <em>"Knowledge-Infused Prediction of Post–Lane-Change Interaction Strength for Connected and Automated Vehicles"</em>
+          submitted to <strong>IEEE Transactions on Vehicular Technology</strong> — currently in <strong>second-round review</strong>.
+          <span class="news-tag">paper</span>
+        </div>
+      </li>
+      <li>
+        <time>2025.12</time>
+        <div>
+          Co-authored preprint <em>"CauTraj: A Causal-Knowledge-Guided Framework for Lane-Changing Trajectory Planning of Autonomous Vehicles"</em>
+          on <a href="https://arxiv.org/abs/2512.18703" target="_blank" rel="noopener">arXiv:2512.18703 ↗</a>.
+          <span class="news-tag">preprint</span>
+        </div>
+      </li>
+      <li>
+        <time>2025.09</time>
+        <div>
+          Enrolled in the Ph.D. program at the School of Traffic &amp; Transportation, Chongqing Jiaotong University,
+          joining the Air-Ground Cooperative Traffic Control &amp; Technical Equipment Lab.
+          <span class="news-tag">milestone</span>
+        </div>
+      </li>
+      <li>
+        <time>2025.04</time>
+        <div>
+          Co-authored paper <em>"Fire and Smoke Detection Based on Improved YOLOv11"</em> accepted by <strong>IEEE Access</strong>.
+          <span class="news-tag">published</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== education ===== -->
+<section id="education" class="section">
+  <div class="container">
+    <h2 class="sec-title">
+      <span class="sec-idx">/03</span>
+      Education
+      <span class="sec-line"></span>
+    </h2>
+    <div class="timeline">
+      <div class="tl-item current">
+        <div class="tl-dot"></div>
+        <div class="tl-body glass-card tilt">
+          <div class="tl-head">
+            <h3>Chongqing Jiaotong University · School of Traffic &amp; Transportation</h3>
+            <time>2025.09 — Present</time>
+          </div>
+          <p class="tl-deg">Ph.D. (Academic) · Transportation Engineering</p>
+          <p>Advisor: Prof. Xiaoyu Cai · Air-Ground Cooperative Traffic Control &amp; Technical Equipment Lab</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body glass-card tilt">
+          <div class="tl-head">
+            <h3>Xijing University</h3>
+            <time>2022.08 — 2025.01</time>
+          </div>
+          <p class="tl-deg">M.Eng. · Electronic Information (Control Engineering)</p>
+          <p>Advisors: Prof. Lingyun Kong &amp; Prof. Lili Han</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body glass-card tilt">
+          <div class="tl-head">
+            <h3>Chongqing College of Mobile Communication</h3>
+            <time>2018.09 — 2022.06</time>
+          </div>
+          <p class="tl-deg">B.Eng. · Electrical Engineering &amp; Automation</p>
+          <p>President of the campus literary society</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== research ===== -->
+<section id="research" class="section alt">
+  <div class="container">
+    <h2 class="sec-title">
+      <span class="sec-idx">/04</span>
+      Research Interests
+      <span class="sec-line"></span>
+    </h2>
+    <div class="research-grid">
+      <div class="glass-card research-card tilt">
+        <div class="rc-icon">🚗</div>
+        <h3>CAV &amp; Mixed Traffic Flow</h3>
+        <p>Lane-change interaction-strength modeling, interaction-impact mechanisms, and CAV penetration effects on mixed-traffic efficiency — theoretical support for multi-vehicle cooperative decision-making.</p>
+        <div class="rc-tags"><span>lane-change</span><span>interaction</span><span>CAV</span></div>
+      </div>
+      <div class="glass-card research-card tilt">
+        <div class="rc-icon">🧭</div>
+        <h3>Causal Inference &amp; Trajectory Planning</h3>
+        <p>Embedding causal priors into Model Predictive Control (MPC) for explainable, human-like autonomous lane-change trajectory planning.</p>
+        <div class="rc-tags"><span>causality</span><span>MPC</span><span>explainability</span></div>
+      </div>
+      <div class="glass-card research-card tilt">
+        <div class="rc-icon">👁️</div>
+        <h3>Traffic Vision Perception</h3>
+        <p>Improved YOLO / SAM for detection &amp; segmentation: pavement distress, fire &amp; smoke, UAV targets, and traffic-violation recognition.</p>
+        <div class="rc-tags"><span>YOLO</span><span>SAM</span><span>detection</span></div>
+      </div>
+      <div class="glass-card research-card tilt">
+        <div class="rc-icon">🛰️</div>
+        <h3>Air-Ground Cooperation &amp; Edge Intelligence</h3>
+        <p>Engineering algorithms for real deployment: device selection, edge deployment, server-side integration — bringing AI to rural traffic-safety governance.</p>
+        <div class="rc-tags"><span>edge</span><span>deployment</span><span>rural</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== projects ===== -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="sec-title">
+      <span class="sec-idx">/05</span>
+      Projects
+      <span class="sec-line"></span>
+    </h2>
+
+    <article class="glass-card project-feature tilt">
+      <div class="pf-badge">★ Featured · Engineering Practice</div>
+      <div class="pf-head">
+        <h3>Qijiang District · 52 Traffic-Safety Persuasion Stations Digital Front-End Upgrade</h3>
+        <time>2025 — 2026</time>
+      </div>
+      <p class="pf-role">Role: <strong>Algorithm Lead · Technical Director</strong>　|　Partner: Qijiang District Public Security Bureau　|　Featured in <em>Chongqing Daily</em> (2026.05)</p>
+      <p>
+        Tackling the governance challenge on Qijiang's rural roads — "many points, long lines, wide areas"
+        (~5,253 km of roadways; 130k+ registered two-/three-wheel motorcycles; rampant helmet-less / overloading / illegal-loading violations).
+        Completed the <strong>smart front-end upgrade of 52 persuasion stations</strong>, covering the full pipeline from
+        on-site construction to algorithm deployment:
+      </p>
+      <div class="pf-tags">
+        <span>on-site spec</span><span>algorithm R&amp;D</span><span>edge deployment</span><span>device selection</span><span>server integration</span>
+      </div>
+      <ul class="pf-points">
+        <li><strong>Six-category violation recognition</strong> — helmet-less, overloading, illegal-loading, wrong-way, crossing-line, speeding — 24/7 automated detection &amp; capture.</li>
+        <li><strong>End-edge-cloud closed loop</strong> — front-end recognition → district public-security smart-traffic management center → on-site speaker / LED correction → barrier auto-release after hazard cleared.</li>
+        <li><strong>Five-in-one function</strong> — violation recognition, smart persuasion, info collection, safety promotion, collision warning.</li>
+        <li><strong>Real-world results</strong> — Wenlong Subdistrict alone captured 600+ helmet-less / overloading violations, processed 24 overloading cases, conducted 500+ educational sessions, tiered management of 24 individuals; pilot areas saw gradual decline in violations.</li>
+      </ul>
+      <a class="btn small" href="https://cqrb.cn/contry/dy33/2026-05-19/2672298_pc.html" target="_blank" rel="noopener" data-magnetic>
+        <span>Read Chongqing Daily report</span> <span class="btn-arrow">↗</span>
+      </a>
+    </article>
+
+    <div class="project-grid">
+      <article class="glass-card project-card tilt">
+        <div class="pc-head">
+          <h3>Knowledge-Infused Prediction of Post-Lane-Change Vehicle Interaction Strength</h3>
+          <time>2025 — Now</time>
+        </div>
+        <p class="pc-venue">Longitudinal research · IEEE TVT under review (2nd round)</p>
+        <p>
+          Studying the chain effect of lane-change vehicles on following traffic; proposes a vehicle-queue interaction prediction model.
+          Uses Interaction Influence Strength (IIS) hierarchical clustering to identify explainable interaction patterns, observes
+          transition features during lane changes, and proves that introducing interaction-pattern priors significantly improves
+          multi-scenario prediction accuracy — supporting multi-vehicle cooperative decision-making for autonomous driving.
+        </p>
+      </article>
+      <article class="glass-card project-card tilt">
+        <div class="pc-head">
+          <h3>Staged Detection Framework for the "Ghost-Pedestrian" Problem in Autonomous Driving</h3>
+          <time>2025 — Now</time>
+        </div>
+        <p class="pc-venue">Active research topic</p>
+        <p>
+          Addressing the occlusion-induced "ghost-pedestrian" challenge with a staged processing framework that boosts detection accuracy.
+          Designs a posture-estimation matrix for object tracking, proposes a probe-style data-augmentation method and motion-trend
+          visualization, and performs pedestrian-crossing-intent classification &amp; prediction on the JAAD dataset.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== publications ===== -->
+<section id="publications" class="section alt">
+  <div class="container">
+    <h2 class="sec-title">
+      <span class="sec-idx">/06</span>
+      Publications
+      <span class="sec-line"></span>
+    </h2>
+
+    <h3 class="pub-group-title"><span class="pg-dot"></span>Under Review / Preprint</h3>
+    <ol class="pub-list">
+      <li class="glass-card pub-item tilt">
+        <div class="pub-main">
+          <p class="pub-title">Knowledge-Infused Prediction of Post–Lane-Change Interaction Strength for Connected and Automated Vehicles</p>
+          <p class="pub-authors">Cailin Lei, <b>Jason Wu</b>, Xiaoyu Cai*, Yuxiong Ji, Yuchuan Du</p>
+          <p class="pub-venue"><em>IEEE Transactions on Vehicular Technology</em> · Under review · 2nd round</p>
+        </div>
+        <a class="pub-link" href="assets/papers/lanechange-interaction-tvt-under-review.pdf" target="_blank" rel="noopener">PDF ↗</a>
+      </li>
+      <li class="glass-card pub-item tilt">
+        <div class="pub-main">
+          <p class="pub-title">CauTraj: A Causal-Knowledge-Guided Framework for Lane-Changing Trajectory Planning of Autonomous Vehicles</p>
+          <p class="pub-authors">Cailin Lei, <b>Jason Wu</b>, Yuxiong Ji*, Xiaoyu Cai, Yuchuan Du</p>
+          <p class="pub-venue">arXiv:2512.18703 · Preprint</p>
+        </div>
+        <div class="pub-links">
+          <a class="pub-link" href="assets/papers/cautraj-arxiv-2025.pdf" target="_blank" rel="noopener">PDF ↗</a>
+          <a class="pub-link" href="https://arxiv.org/abs/2512.18703" target="_blank" rel="noopener">arXiv ↗</a>
+        </div>
+      </li>
+    </ol>
+
+    <h3 class="pub-group-title"><span class="pg-dot"></span>Published</h3>
+    <ol class="pub-list">
+      <li class="glass-card pub-item tilt">
+        <div class="pub-main">
+          <span class="pub-badge sci">SCI · JCR Q2</span>
+          <p class="pub-title">YOLOv11-HNU: Enhanced Unmanned Aerial Vehicle Target Detection Based on Improved YOLOv11</p>
+          <p class="pub-authors">Zhipeng Xue, Lingyun Kong, <b>Jason Wu</b></p>
+          <p class="pub-venue"><em>IEEE Access</em>, 2026 · DOI: 10.1109/ACCESS.2026.3653122</p>
+        </div>
+        <a class="pub-link" href="assets/papers/yolov11-hnu-uav-ieee-access-2026.pdf" target="_blank" rel="noopener">PDF ↗</a>
+      </li>
+      <li class="glass-card pub-item tilt">
+        <div class="pub-main">
+          <span class="pub-badge sci">SCI</span>
+          <p class="pub-title">Fire and Smoke Detection Based on Improved YOLOv11</p>
+          <p class="pub-authors">Zhipeng Xue, Lingyun Kong, <b>Jason Wu</b>, Jiale Chen</p>
+          <p class="pub-venue"><em>IEEE Access</em>, 2025 · DOI: 10.1109/ACCESS.2025.3564434</p>
+        </div>
+        <a class="pub-link" href="assets/papers/fire-smoke-yolov11-ieee-access-2025.pdf" target="_blank" rel="noopener">PDF ↗</a>
+      </li>
+      <li class="glass-card pub-item tilt">
+        <div class="pub-main">
+          <span class="pub-badge sci">SCI</span>
+          <p class="pub-title">Remote Sensing Image Super-Resolution Reconstruction by Fusing Multi-Scale Receptive Fields and Hybrid Transformer</p>
+          <p class="pub-authors">Denghui Liu, Lin Zhong, <b>Jason Wu</b>, Songyang Li, Yida Li</p>
+          <p class="pub-venue"><em>Scientific Reports</em>, 2025</p>
+        </div>
+        <a class="pub-link" href="assets/papers/rs-super-resolution-scirep-2025.pdf" target="_blank" rel="noopener">PDF ↗</a>
+      </li>
+      <li class="glass-card pub-item tilt">
+        <div class="pub-main">
+          <span class="pub-badge sci first">SCI · First Author</span>
+          <p class="pub-title">Crack Detection on Road Surfaces Based on Improved YOLOv8</p>
+          <p class="pub-authors"><b>Jason Wu</b>, Lingyun Kong, Denghui Liu</p>
+          <p class="pub-venue"><em>IEEE Access</em>, 2024 · DOI: 10.1109/ACCESS.2024.3517632</p>
+        </div>
+        <a class="pub-link" href="assets/papers/crack-yolov8-ieee-access-2024.pdf" target="_blank" rel="noopener">PDF ↗</a>
+      </li>
+      <li class="glass-card pub-item tilt">
+        <div class="pub-main">
+          <span class="pub-badge ei">EI · First Author</span>
+          <p class="pub-title">Open-set Image Segmentation Based on an Improved Segment Anything Model</p>
+          <p class="pub-authors"><b>Jason Wu</b>, Lingyun Kong, Zhipeng Xue, Denghui Liu, Songyang Li, Qi Zhang</p>
+          <p class="pub-venue"><em>2024 6th Int. Conf. on Robotics, Intelligent Control and Artificial Intelligence (RICAI)</em></p>
+        </div>
+        <a class="pub-link" href="assets/papers/openset-sam-ricai-2024.pdf" target="_blank" rel="noopener">PDF ↗</a>
+      </li>
+    </ol>
+
+    <h3 class="pub-group-title"><span class="pg-dot"></span>Software Copyright</h3>
+    <ol class="pub-list">
+      <li class="glass-card pub-item tilt">
+        <div class="pub-main">
+          <span class="pub-badge soft">Software ©</span>
+          <p class="pub-title">X-PIC Image Processing Software</p>
+          <p class="pub-authors">Xijing University · <b>Jason Wu</b></p>
+          <p class="pub-venue">Registration No.: 2024SR0052492</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== honors ===== -->
+<section id="honors" class="section">
+  <div class="container">
+    <h2 class="sec-title">
+      <span class="sec-idx">/07</span>
+      Honors &amp; Awards
+      <span class="sec-line"></span>
+    </h2>
+    <ul class="honor-list">
+      <li class="glass-card tilt">
+        <span class="h-icon">🏆</span>
+        <div><b>"Huawei Cup" China Graduate AI Innovation Competition</b><span>National Third Prize</span></div>
+      </li>
+      <li class="glass-card tilt">
+        <span class="h-icon">🥈</span>
+        <div><b>China International "Internet+" College Students' Innovation &amp; Entrepreneurship Competition</b><span>Silver Prize</span></div>
+      </li>
+      <li class="glass-card tilt">
+        <span class="h-icon">🥉</span>
+        <div><b>China International "Internet+" College Students' Innovation &amp; Entrepreneurship Competition</b><span>Provincial Bronze Prize</span></div>
+      </li>
+      <li class="glass-card tilt">
+        <span class="h-icon">🎓</span>
+        <div><b>University Academic Scholarship</b><span>2022 Second-Class · 2023 / 2024 Third-Class</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== contact ===== -->
+<section id="contact" class="section alt">
+  <div class="container">
+    <h2 class="sec-title">
+      <span class="sec-idx">/08</span>
+      Get in Touch
+      <span class="sec-line"></span>
+    </h2>
+    <div class="contact-grid">
+      <a class="glass-card contact-card tilt" href="mailto:wuj400646@gmail.com" data-magnetic>
+        <span class="c-icon">✉️</span><b>Email</b><span>wuj400646@gmail.com</span>
+      </a>
+      <a class="glass-card contact-card tilt" href="https://github.com/JasonWuuuuuu" target="_blank" rel="noopener" data-magnetic>
+        <span class="c-icon">💻</span><b>GitHub</b><span>@JasonWuuuuuu</span>
+      </a>
+      <a class="glass-card contact-card tilt" href="https://orcid.org/my-orcid?orcid=0009-0009-2122-7435" target="_blank" rel="noopener" data-magnetic>
+        <span class="c-icon">🆔</span><b>ORCID</b><span>0009-0009-2122-7435</span>
+      </a>
+      <div class="glass-card contact-card tilt">
+        <span class="c-icon">💬</span><b>QQ</b><span>2010530510</span>
+      </div>
+    </div>
+    <p class="contact-note">
+      <span class="note-deco">◆</span>
+      Always open to collaboration on connected &amp; automated vehicles, mixed-traffic flow, and traffic-AI engineering.
+      <span class="note-deco">◆</span>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-logo">Jason<span class="logo-accent">Wu</span></p>
+    <p>© 2026 · Chongqing Jiaotong University · School of Traffic &amp; Transportation</p>
+    <p class="muted">Air-Ground Cooperative Traffic Control &amp; Technical Equipment Lab · Built with passion for transportation science.</p>
+    <p class="footer-switch"><a href="index.html">← Back to 中文版</a></p>
+  </div>
+</footer>
+
+<script src="js/en.js"></script>
+</body>
+</html>
